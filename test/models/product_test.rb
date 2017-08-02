@@ -69,7 +69,7 @@ class ProductTest < ActiveSupport::TestCase
 
   test "product title should not be less than 10 characters" do
     @product.title = 'a' * 9
-    assert @product.invalid?, "#{@product.title should be atleast 10 characters}"
+    assert @product.invalid?, "#{@product.title} should be atleast 10 characters"
   end
 
 end
