@@ -3,6 +3,12 @@ require 'test_helper'
 class ProductTest < ActiveSupport::TestCase
 
   fixtures :products
+  def setup
+    @product = Product.new(title:       "The Great Gatsby",
+                           description: "yyy",
+                           image_url:   "fred.jpg",
+                           price:       1)
+  end
 
   test "product attributes must not be empty" do
     product = Product.new
@@ -59,6 +65,11 @@ class ProductTest < ActiveSupport::TestCase
                           image_url:   "fred.gif")
     assert product.invalid?
     assert_equal ["has already been taken"], product.errors[:title]
+  end
+
+  test "product title should be more than 10 characters" do
+    @product.title = 'a' * 9
+    assert @product.invalid?
   end
 
 end
