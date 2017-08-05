@@ -11,6 +11,9 @@
   <body class="<%= controller.controller_name %>">
     <div id="banner">
       <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
+      <% if session[:counter] > 5 %>
+        <%= pluralize session[:counter], 'time' %>
+      <% end %>
       <span class="title"><%= @page_title %></span>
     </div>
     <div id="columns">
