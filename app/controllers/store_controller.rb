@@ -2,7 +2,7 @@ class StoreController < ApplicationController
 
   def index
     @products = Product.order(:title)
-    increment_count
+    @counter = increment_count
   end
 
 end
