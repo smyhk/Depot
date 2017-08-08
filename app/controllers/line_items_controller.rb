@@ -72,7 +72,7 @@ class LineItemsController < ApplicationController
         format.html { redirect_to store_index_url, notice: 'Your cart is empty' }
         format.json { head :no_content }
       else
-        format.html { redirect_to @line_item.cart, notice: 'Item removed' }
+        format.html { redirect_to store_index_url, notice: 'Item removed' }
         format.json { head :no_content }
       end
     end
