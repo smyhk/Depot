@@ -1,5 +1,6 @@
 module SessionCounter
-
+# This code meets the requirements for a chapter playtime;
+# it is not integral to the app
   private
 
     def increment_count

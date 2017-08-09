@@ -36,7 +36,7 @@ class LineItemsController < ApplicationController
         format.js { @current_item = @line_item }
         format.json { render :show, status: :created, location: @line_item }
         # reset the sessioner counter to 0 when new item added to cart
-        session[:counter] = 0
+        # session[:counter] = 0 - this was from a chapter playtime
       else
         format.html { render :new }
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
