@@ -69,13 +69,8 @@ class LineItemsController < ApplicationController
     end
 
     respond_to do |format|
-      if @line_item.cart.line_items.empty?
-        format.html { redirect_to store_index_url, notice: 'Your cart is empty' }
+        format.html { redirect_to store_index_url }
         format.json { head :no_content }
-      else
-        format.html { redirect_to store_index_url, notice: 'Item removed' }
-        format.json { head :no_content }
-      end
     end
   end
 
