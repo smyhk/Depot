@@ -1,9 +1,9 @@
 atom_feed do |feed|
   feed.title "Who bought #{@product.title}"
 
-  feef.updated @latest_order.try(:updated_at)
+  feed.updated @latest_order.try(:updated_at)
 
-  @products.orders.each do |order|
+  @product.orders.each do |order|
     feed.entry(order) do |entry|
       entry.title "Order #{order.id}"
       entry.summary type: 'xhtml' do |xhtml|
