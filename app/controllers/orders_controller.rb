@@ -47,7 +47,7 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
-    @order = Order.find(params[:order_id])
+    @order = Order.find(params[:id])
     OrderMailer.shipped(@order).deliver_later if @order.ship_date
     respond_to do |format|
       if @order.update(order_params)
