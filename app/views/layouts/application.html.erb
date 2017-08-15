@@ -29,6 +29,14 @@
           <li><%= link_to "News", '#' %></li>
           <li><%= link_to "Contact", '#' %></li>
         </ul>
+        <% if session[:user_id] %>
+          <ul>
+            <li><%= link_to 'Orders', orders_path %></li>
+            <li><%= link_to 'Productss', products_path %></li>
+            <li><%= link_to 'Users', users_path %></li>
+          </ul>
+          <%= button_to 'Logout', logout_path, method: :delete %>
+        <% end %>
         <div id="date">
           <%= Time.zone.now.to_time.strftime('%B, %e at %l:%M %p') %>
         </div>
